@@ -1,17 +1,23 @@
-    body {
-      background-color: #111;  
-      color: #0f0;           
-      font-family: monospace; 
-      white-space: pre;       
-      padding: 2rem;
-    }
+body {
+  background-color: #111;
+  color: #0f0;
+  font-family: monospace;
+  padding: 2rem;
+  margin: 0;
+}
 
-    a {
-      color: #0f0;
-      text-decoration: none;
-      font-weight: bold;
-    }
+.ascii {
+  white-space: pre;
+  line-height: 1.1;
+  font-size: 14px;
+}
 
-    a:hover {
-      color: #ff0;
-    }
+a {
+  color: #0f0;
+  text-decoration: none;
+  font-weight: bold;
+}
+
+a:hover {
+  color: #ff0;
+}
