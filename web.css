@@ -60,3 +60,14 @@ a {
 a:hover {
   color: var(--link-hover-color);
 }
+
+.puzzles-section {
+  margin-top: 2rem;
+  padding-top: 1rem;
+}
+
+.puzzles-section .ascii {
+  white-space: pre;
+  line-height: 1.1;
+  font-size: 14px;
+}

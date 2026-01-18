@@ -23,19 +23,34 @@
         |<br>
         |    (o)  <a href="https://github.com/afjal4/neural-representations-drp">[directed reading program &gt;]</a><br>
         |<br>
-        |     |                                           (o) <a href="#">[puzzles &gt;]</a><br>
+        |     |                                           (o) <a href="#" onclick="togglePuzzles(event);">[puzzles &gt;]</a><br>
         |                (o) <a href="#">[projects &gt;]</a><br>
         |     |           |                                |<br>
         |  (o)  <a href="#">[WIP &gt;]</a><br>
         |     |           |                                |<br> 
         ╱ ¯¯|¯¯¯¯¯¯¯¯¯¯¯¯¯----------------_________________<br>
-      ╱       |           |                                |¯¯¯¯¯¯¯¯¯¯¯¯¯¯¯¯----------------_________________<br>
+      ╱       |           |                                |¯¯¯¯¯¯¯¯¯¯¯¯¯¯¯¯----------------_________________><br>
     ╱       |                                                        <br>
   ╱         ¯ |           |                                |<br>
-╱             ¯           ¯                                ¯<br>
+L             ¯           ¯                                ¯<br>
                           
   </div>
 
+  <div id="puzzles-content" class="puzzles-section" style="display: none;">
+    <div class="ascii">
+      <br>
+      ------------------------------------------------------------------------------------------<br>
+      <br>
+      I really like word puzzles, and I am the puzzles copyeditor of Felix (the Imperial Newspaper).
+      Here are some puzzles I have written:
+      <a href="https://crosshare.org/afjal">Crosshare</a><br>
+      <a href="https://connections.swellgarfo.com/game/-OjIUR5RZo0aBPSsb0oG">Connections 1</a><br>
+      <a href="https://connections.swellgarfo.com/game/-OjITZTbHD5UtZaifa7U">Connections 2</a><br>
+      
+      And here are some of my favourite puzzles:
+      [still deciding on these]
+    </div>
+  </div>
 
   <script>
     // Initialize theme from localStorage or default to dark
@@ -48,6 +63,16 @@
       const newTheme = currentTheme === 'dark' ? 'light' : 'dark';
       html.setAttribute('data-theme', newTheme);
       localStorage.setItem('theme', newTheme);
+    }
+
+    function togglePuzzles(event) {
+      event.preventDefault();
+      const puzzlesContent = document.getElementById('puzzles-content');
+      if (puzzlesContent.style.display === 'none') {
+        puzzlesContent.style.display = 'block';
+      } else {
+        puzzlesContent.style.display = 'none';
+      }
     }
   </script>
 </body>
