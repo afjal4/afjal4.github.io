@@ -27,7 +27,7 @@
         |    (o)  <a href="https://github.com/afjal4/neural-representations-drp">[directed reading program &gt;]</a><br>
         |                                                                     (o) <a href="https://medium.com/@afjal.nc">[medium &gt;]</a><br><br> 
         |     |                                           (o) <a href="#" onclick="togglePuzzles(event);">[puzzles &gt;]</a><br>
-        |                (o) <a href="#">[WIP &gt;]</a>                                           |<br>
+        |                (o) <a href="#" onclick="toggleFavourites(event);">[favourites &gt;]</a>                                       |<br>
         |     |           |                                |<br>
         |                                                          (o)  <a href="#">[WIP &gt;]</a>|<br>
         |     |           |                                |<br> 
@@ -37,6 +37,25 @@
   ╱           |                                            |        ¯<br>
 L             ¯                                            ¯                   |<br>
                                                                                ¯<br>
+  </div>
+
+
+  <div id="favourites-content" class="favourites-section" style="display: none;">
+    <div class="ascii">
+      <br>
+      ------------------------------------------------------------------------------------------<br>
+      <br>
+      [WIP!!]
+      <i>Favourite papers at the moment:</i>
+      Favourite projects at the moment:
+      DisCoCat
+      The Platonic Representation Hypothesis
+      Harnessing the universal geometry of embeddings
+      Sheehan Olver's recent paper
+      Getting aligned on representational alignment
+      piDMD
+      Eckhart Young
+    </div>
   </div>
 
   <div id="puzzles-content" class="puzzles-section" style="display: none;">
@@ -51,7 +70,7 @@ L             ¯                                            ¯                  
       <a href="https://connections.swellgarfo.com/game/-OjITZTbHD5UtZaifa7U">Connections 2</a><br>
       
       And here are some of my favourite puzzles:
-      [still deciding on these]
+      <a href="https://blookerstein.itch.io/showy-homes">Cool wordle-inspired puzzle that Teddy Wu showed me</a><br>
     </div>
   </div>
 
@@ -59,6 +78,9 @@ L             ¯                                            ¯                  
     // Initialize theme from localStorage or default to dark
     const currentTheme = localStorage.getItem('theme') || 'dark';
     document.documentElement.setAttribute('data-theme', currentTheme);
+
+    const puzzlesContent = document.getElementById('puzzles-content');
+    const favouritesContent = document.getElementById('favourites-content');
     
     function toggleTheme() {
       const html = document.documentElement;
@@ -68,14 +90,29 @@ L             ¯                                            ¯                  
       localStorage.setItem('theme', newTheme);
     }
 
-    function togglePuzzles(event) {
-      event.preventDefault();
-      const puzzlesContent = document.getElementById('puzzles-content');
-      if (puzzlesContent.style.display === 'none') {
-        puzzlesContent.style.display = 'block';
-      } else {
+    function hideAllSections() {
+      if (puzzlesContent) {
         puzzlesContent.style.display = 'none';
       }
+      if (favouritesContent) {
+        favouritesContent.style.display = 'none';
+      }
+    }
+
+    function togglePuzzles(event) {
+      event.preventDefault();
+      if (!puzzlesContent) return;
+      const isHidden = puzzlesContent.style.display === 'none' || puzzlesContent.style.display === '';
+      hideAllSections();
+      puzzlesContent.style.display = isHidden ? 'block' : 'none';
+    }
+
+    function toggleFavourites(event) {
+      event.preventDefault();
+      if (!favouritesContent) return;
+      const isHidden = favouritesContent.style.display === 'none' || favouritesContent.style.display === '';
+      hideAllSections();
+      favouritesContent.style.display = isHidden ? 'block' : 'none';
     }
   </script>
 </body>

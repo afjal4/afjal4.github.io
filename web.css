@@ -71,3 +71,14 @@ a:hover {
   line-height: 1.1;
   font-size: 14px;
 }
+
+.favourites-section {
+  margin-top: 2rem;
+  padding-top: 1rem;
+}
+
+.favourites-section .ascii {
+  white-space: pre;
+  line-height: 1.1;
+  font-size: 14px;
+}
